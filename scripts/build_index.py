@@ -2,6 +2,7 @@ import faiss
 import os
 import pickle
 import numpy as np
+from app.vector_store.faiss_store import FaissStore
 from app.embeddings.embedder import get_embedding
 
 # Replace with your corpus
@@ -12,11 +13,7 @@ documents = [
 ]
 
 embeddings = [get_embedding(doc) for doc in documents]
-index = faiss.IndexFlatL2(len(embeddings[0]))
-index.add(np.array(embeddings))
-
-os.makedirs("data", exist_ok=True)
-with open("data/index.pkl", "wb") as f:
-    pickle.dump((index, documents), f)
-
+store = FaissStore(dim=len(embeddings[0]))
+store.add(embeddings, documents)
+store.save()
 print("Index built and saved to data/index.pkl")

@@ -73,15 +73,35 @@ ai_knowledgeops_mas/
 ├── app/
 │   ├── api.py
 │   ├── agents/
+│   │   ├── base_agent.py
+│   │   ├── coordinator.py
+│   │   ├── finance_agent.py
+│   │   ├── legal_agent.py
+│   │   ├── medical_agent.py
+│   │   ├── retrieval_agent.py
+│   │   └── tools_agent.py
 │   ├── chains/
+│   │   └── rag_chain.py
 │   ├── embeddings/
-│   └── utils/
-├── scripts/
-│   └── build_index.py
+│   │   └── embedder.py
+│   ├── tools/
+│   │   └── tools.py
+│   ├── utils/
+│   │   └── prompt_templates.py
+│   └── vector_store/
+│       └── faiss_store.py
+│
 ├── data/
-├── requirements.txt
+│   └── index.pkl
+│
+├── scripts/
+│   ├── build_index.py
+│   └── architecture_overview.md
+│
 ├── Dockerfile
-└── README.md
+├── project_description.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
