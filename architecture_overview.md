@@ -111,11 +111,11 @@ ai_knowledgeops_mas/
 **Docker**
 
 ```bash
-docker build -t ai-knowledgeops .
+docker build -t ai-knowledgeops-mas .
 docker run -p 8000:8000 \
   -e HF_API_TOKEN=your_token \
   -e HF_API_URL=https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1 \
-  ai-knowledgeops
+  ai-knowledgeops-mas
 ```
 
 **AWS EC2**
@@ -125,15 +125,15 @@ sudo apt update && sudo apt install docker.io
 docker run -d -p 80:8000 \
   -e HF_API_TOKEN=your_token \
   -e HF_API_URL=https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1 \
-  ai-knowledgeops
+  ai-knowledgeops-mas
 ```
 
 **Google Cloud Run**
 
 ```bash
-gcloud builds submit --tag gcr.io/YOUR_PROJECT/ai-knowledgeops
-gcloud run deploy ai-knowledgeops \
-  --image gcr.io/YOUR_PROJECT/ai-knowledgeops \
+gcloud builds submit --tag gcr.io/YOUR_PROJECT/ai-knowledgeops-mas
+gcloud run deploy ai-knowledgeops-mas \
+  --image gcr.io/YOUR_PROJECT/ai-knowledgeops-mas \
   --platform managed --allow-unauthenticated \
   --set-env-vars HF_API_TOKEN=your_token,HF_API_URL=https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.1
 ```
@@ -163,8 +163,3 @@ gcloud run deploy ai-knowledgeops \
 
    * React or Streamlit-based interface for querying and interacting with agents
 
----
-
-### Contact
-
-Project maintained internally. For feedback or collaboration, please reach out through the development team channel.
