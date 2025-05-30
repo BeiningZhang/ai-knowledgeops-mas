@@ -1,14 +1,14 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from pydantic import BaseModel
-from app.agents.coordinator import CoordinatorAgent
+from app.chains.router_chain import RouterAgent
 
 app = FastAPI()
-coordinator = CoordinatorAgent()
+router_agent = RouterAgent()
 
 class QueryRequest(BaseModel):
     query: str
 
 @app.post("/query")
 async def query_endpoint(req: QueryRequest):
-    result = await coordinator.handle_query(req.query)
+    result = await router_agent.handle_query(req.query)
     return {"response": result}

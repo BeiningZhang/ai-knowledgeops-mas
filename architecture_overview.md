@@ -32,7 +32,7 @@ AI KnowledgeOps MAS is a modular, containerised multi-agent system (MAS) designe
            |
            v
 +-----------------------+
-|   Coordinator Agent   | -- Routes based on query intent
+|      Router Agent     | -- Routes based on query intent
 +-----------------------+
   |      |         |         |
   v      v         v         v
